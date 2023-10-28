@@ -5,7 +5,14 @@ const server = Bun.serve({
     const url = new URL(req.url);
     if (url.pathname === "/") return new Response("Home page!");
     if (url.pathname === "/blog") return new Response("Blog page!");
-    return new Response("404!");
+    throw new Error("Page Not Found");
+  },
+  error(error) {
+    return new Response(`<pre>${error}\n${error.stack}</pre>`, {
+      headers: {
+        "Content-Type": "text/html",
+      },
+    });
   },
 });
 
