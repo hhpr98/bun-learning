@@ -41,6 +41,10 @@ bun init # then fill the data into following steps
 
 ### Executing program
 
+* Install prequisites packages
+```sh
+bun install
+```
 * Start new index.ts from bun
 ```sh
 bun run index.ts
