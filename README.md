@@ -39,6 +39,13 @@ bun -v # The result will be 1.0.7
 bun init # then fill the data into following steps
 ```
 
+* To upgrade bun to latest version
+```sh
+bun upgrade
+# bun upgrade --canary if you want to point to every commit in main
+# see https://github.com/oven-sh/bun for more detail
+```
+
 ### Executing program
 
 * Install prequisites packages
@@ -67,6 +74,7 @@ Nguyễn Hữu Hòa
 * Starting with BunJS 1.0.7
 * Init documentation
 * Init project
+* Upgrade to BunJS version 1.0.21
 
 ## License
 
