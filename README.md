@@ -75,6 +75,7 @@ Nguyễn Hữu Hòa
 * Init documentation
 * Init project
 * Upgrade to BunJS version 1.0.21
+* Upgrade to BunJS version 1.0.22
 
 ## License
 
