@@ -32,7 +32,7 @@ source /home/<user>/.bashrc
 ```
 * Check the bun version
 ```sh
-bun -v # The result will be 1.0.7
+bun -v # The result will be 1.0.30
 ```
 * To init a bun repository
 ```sh
@@ -76,10 +76,11 @@ Nguyễn Hữu Hòa
 * Init project
 * Upgrade to BunJS version 1.0.21
 * Upgrade to BunJS version 1.0.22
+* Upgrade to BunJS version 1.0.30
 
 ## License
 
-This project is licensed under the [@hhpr98] License - see the readme.md file for details
+This project is licensed under the [@hhpr98] License - see the README.md file for details
 
 ## Acknowledgments
 

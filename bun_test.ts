@@ -1,3 +1,5 @@
+// This script for testing bun only
+// syntax: bun run bun_test.ts
 const server = Bun.serve({
   development: true, // By default, development mode is enabled unless NODE_ENV is production
   port: 8080, // defaults to $BUN_PORT, $PORT, $NODE_PORT otherwise 3000
