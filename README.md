@@ -52,9 +52,14 @@ bun upgrade
 ```sh
 bun install
 ```
-* Start new index.ts from bun
+* Start new test file from bun
 ```sh
-bun run index.ts
+bun run bun_test.ts
+```
+
+* Start new express server from bun
+```sh
+bun run server.ts
 ```
 
 ## Help
