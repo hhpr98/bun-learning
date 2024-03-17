@@ -13,7 +13,7 @@ I will check and upgrade each version of bun.The purpose of this repository is j
 * Visual Studio Code (I am currently working on this ide)
 
 ### Enviroment
-* BunJS: **v1.0.30** [download](https://bun.sh/)
+* BunJS: **v1.0.31** [download](https://bun.sh/)
 * Windows SubSytem for Linux latest Update (I am using WSL Ubuntu 22.04)
 
 ### Installing
@@ -32,7 +32,7 @@ source /home/<user>/.bashrc
 ```
 * Check the bun version
 ```sh
-bun -v # The result will be 1.0.30
+bun -v # The result will be 1.0.31
 ```
 * To init a bun repository
 ```sh
@@ -83,6 +83,7 @@ Nguyễn Hữu Hòa
 * Upgrade to BunJS version 1.0.22
 * Upgrade to BunJS version 1.0.30
 * Install simple express server with BunJS
+* Upgrade to BunJS version 1.0.31
 
 ## License
 
