@@ -18,6 +18,7 @@ I will check and upgrade each version of bun.The purpose of this repository is j
 
 ### Installing
 
+__ On Linux __
 * Install unzip (on WSL - optional)
 ```sh
 sudo apt install unzip
@@ -30,9 +31,16 @@ curl -fsSL https://bun.sh/install | bash
 ```sh
 source /home/<user>/.bashrc
 ```
+
+__ On Windows __
+```sh
+powershell -c "irm bun.sh/install.ps1|iex"
+```
+
+
 * Check the bun version
 ```sh
-bun -v # The result will be 1.0.33
+bun -v # or bun --version # The result will be 1.1.1
 ```
 * To init a bun repository
 ```sh
@@ -85,6 +93,7 @@ Nguyễn Hữu Hòa
 * Install simple express server with BunJS
 * Upgrade to BunJS version 1.0.31
 * Upgrade to BunJS version 1.0.33
+* Upgrade to BunJS version 1.1.1, Windows supported
 
 ## License
 
