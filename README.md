@@ -40,7 +40,7 @@ powershell -c "irm bun.sh/install.ps1|iex"
 
 * Check the bun version
 ```sh
-bun -v # or bun --version # The result will be 1.1.1
+bun -v # or bun --version # The result will be 1.1.2
 ```
 * To init a bun repository
 ```sh
@@ -62,12 +62,17 @@ bun install
 ```
 * Start new test file from bun
 ```sh
-bun run bun_test.ts
+bun foo\bun_test.ts
 ```
 
 * Start new express server from bun
 ```sh
-bun run server.ts
+bun server.ts
+```
+
+* Bun test seq, yes, basename, dirname
+```sh
+bun foo\hello.js
 ```
 
 ## Help
@@ -94,6 +99,7 @@ Nguyễn Hữu Hòa
 * Upgrade to BunJS version 1.0.31
 * Upgrade to BunJS version 1.0.33
 * Upgrade to BunJS version 1.1.1, Windows supported
+* Upgrade to BunJS version 1.1.2, Add new bun test with seq, yes, basename, dirname
 
 ## License
 

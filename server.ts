@@ -21,7 +21,7 @@ app.get("/", (_, res) => {
 
 app.get("/products", (_, res) => {
   console.log("[Server] request all products");
-  return res.json({code: 200, data: products});
+  return res.json({ code: 200, data: products });
 });
 
 app.get("/products/:id", (req, res) => {
@@ -34,9 +34,9 @@ app.get("/products/:id", (req, res) => {
   if (!product)
     return res.json({ code: 404, message: `id ${id} NOT FOUND` });
 
-  return res.json({code: 200, data: product});
+  return res.json({ code: 200, data: product });
 });
 
 app.listen(port, () => {
-  console.log(`[Server] app is running at port ${port}`);
+  console.log(`[Server] app is running at http://localhost:${port} ...`);
 });
