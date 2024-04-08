@@ -13,8 +13,8 @@ I will check and upgrade each version of bun.The purpose of this repository is j
 * Visual Studio Code (I am currently working on this ide)
 
 ### Enviroment
-* BunJS: **v1.0.33** [download](https://bun.sh/)
-* Windows SubSytem for Linux latest Update (I am using WSL Ubuntu 22.04)
+* BunJS: **v1.1.3** [download](https://bun.sh/)
+* ~~Windows SubSytem for Linux latest Update (I am using WSL Ubuntu 22.04)~~ Bun v1.1.0 supported Windows OS
 
 ### Installing
 
@@ -40,7 +40,7 @@ powershell -c "irm bun.sh/install.ps1|iex"
 
 * Check the bun version
 ```sh
-bun -v # or bun --version # The result will be 1.1.2
+bun -v # or bun --version # The result will be 1.1.3
 ```
 * To init a bun repository
 ```sh
@@ -100,10 +100,11 @@ Nguyễn Hữu Hòa
 * Upgrade to BunJS version 1.0.33
 * Upgrade to BunJS version 1.1.1, Windows supported
 * Upgrade to BunJS version 1.1.2, Add new bun test with seq, yes, basename, dirname
+* Upgrade to BunJS version 1.1.3
 
 ## License
 
-This project is licensed under the [@hhpr98] License - see the README.md file for details
+This project is licensed under the [@hhpr98](https://github.com/hhpr98) License - see the README.md file for details
 
 ## Acknowledgments
 
