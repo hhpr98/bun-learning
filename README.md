@@ -81,7 +81,7 @@ bun foo\hello.js
 # OR bun --filter='*' dev
 # OR bun --filter 'packages/api' --filter 'packages/frontend' dev
 cd bun_workspaces
-un run --filter "*" dev # will run both dev script of ws1 and ws2
+bun run --filter "*" dev # will run both dev script of ws1 and ws2
 ```
 
 * Bun open file with no 2nd parameter (callback)
@@ -105,6 +105,33 @@ bun bun_database\bun_db_using.ts
 bun bun_database\bun_db_file_control.ts
 bun bun_database\bun_db_close_on_throw_error.ts
 bun bun_database\bun_db_join.ts
+```
+
+* Bun which() with case-insensitive
+```sh
+bun foo\bun_which.ts
+```
+
+* Bun cwd flag (change working directory)
+```sh
+bun --cwd=.\foo run bun_test.ts
+```
+
+* Bun abort signal (for referal only)
+```ts
+const first = new AbortController().signal;
+const second = new AbortController().signal;
+fetch("https://example.com", {
+  signal: first,
+});
+fetch("https://example.com", {
+  signal: second,
+});
+
+const abortSignal = AbortSignal.any([first, second]);
+
+// Cancel this when either `first` or `second` is aborted
+await fetch("https://example.com/slow", { signal: abortSignal });
 ```
 
 ## Help
