@@ -99,6 +99,14 @@ bun bun_fs\bun_fs_write_file\index.ts
 bun bun_fs\bun_fs_append_file\index.ts
 ```
 
+* Bun using database, sqlite file control, db_throw_on_err example
+```sh
+bun bun_database\bun_db_using.ts
+bun bun_database\bun_db_file_control.ts
+bun bun_database\bun_db_close_on_throw_error.ts
+bun bun_database\bun_db_join.ts
+```
+
 ## Help
 
 Please free to raise if you have any issue here.
