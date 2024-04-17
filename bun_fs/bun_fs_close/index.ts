@@ -1,6 +1,6 @@
 import fs from "fs";
 
-fs.open(".\\bun_fs_close\\test.txt", "r", (err, fd) => {
+fs.open(".\\bun_fs\\bun_fs_close\\test.txt", "r", (err, fd) => {
   if (err) {
     console.log(`Failed to open file: ${err}`);
     return;
@@ -12,7 +12,7 @@ fs.open(".\\bun_fs_close\\test.txt", "r", (err, fd) => {
   fs.close(fd);
 });
 
-fs.open(".\\bun_fs_close\\test.txt", "r", (err, fd) => {
+fs.open(".\\bun_fs\\bun_fs_close\\test.txt", "r", (err, fd) => {
   if (err) {
     console.log(`Failed to open file: ${err}`);
     return;

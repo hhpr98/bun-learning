@@ -86,7 +86,12 @@ un run --filter "*" dev # will run both dev script of ws1 and ws2
 
 * Bun open file with no 2nd parameter (callback)
 ```sh
-bun bun_fs_close\index.ts
+bun bun_fs\bun_fs_close\index.ts
+```
+
+* Bun writeFile example
+```sh
+bun bun_fs\bun_fs_write_file\index.ts
 ```
 
 ## Help
