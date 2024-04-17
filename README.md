@@ -94,6 +94,11 @@ bun bun_fs\bun_fs_close\index.ts
 bun bun_fs\bun_fs_write_file\index.ts
 ```
 
+* Bun fs appendFile example
+```sh
+bun bun_fs\bun_fs_append_file\index.ts
+```
+
 ## Help
 
 Please free to raise if you have any issue here.
