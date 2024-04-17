@@ -84,6 +84,11 @@ cd bun_workspaces
 un run --filter "*" dev # will run both dev script of ws1 and ws2
 ```
 
+* Bun open file with no 2nd parameter (callback)
+```sh
+bun bun_fs_close\index.ts
+```
+
 ## Help
 
 Please free to raise if you have any issue here.
