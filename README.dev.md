@@ -98,3 +98,108 @@ bun build --compile --target=bun-linux-arm64 app.ts
   }
 }
 ```
+
+* Bun run with `--hot` or `--watch` command to automatically reload bun (if have TC39 stage3 proposal Import Attributes)
+
+```ts
+import html from "./index.html" with type { type: "text" };
+console.log(html);
+
+import json from "./config.foo" with { type: "json" };
+console.log(json); // { "name": "app" } (converted to JSON object)
+
+import cfg from "./Configfile" with { type: "toml" };
+console.log(cfg); // { "name": "app" }
+```
+
+* Bun.serve() now supports Server Name Indication (SNI)
+
+You can now specify multiple `serverName` TLS entries in `Bun.serve`. This is useful when you want to serve multiple TLS certificates or hostnames on the same port.
+
+```ts
+import { serve } from "bun";
+
+serve({
+  port: 443,
+  tls: [
+    {
+      cert: Bun.file("./example.pem"),
+      key: Bun.file("./example-key.pem"),
+      serverName: "*.example.com",
+    },
+    {
+      cert: Bun.file("./test.pem"),
+      key: Bun.file("./test-key.pem"),
+      serverName: "*.test.com",
+    },
+  ],
+  fetch(request) {
+    return new Response("Using TLS!");
+  },
+});
+```
+
+* Bun.Glob (scan file)
+
+```sh
+bun run bun_glob\index.ts
+```
+
+* Bun compile (compile to a `bun_test.exe` file)
+```sh
+bun build --compile .\foo\bun_test.ts --outfile .\foo\build\bun_test
+```
+
+* Dlopen (open lib) with bun (supported `.so`, `.dylib`, `.dll` file)
+```ts
+import { dlopen } from "bun:ffi";
+
+const lib = dlopen(import.meta.resolve("./lib.so") /* ... symbols */);
+```
+
+* Bun build with `--define` param
+```sh
+bun --cwd=.\bun_define build .\index.ts --target=bun --outfile=build.js # none crash
+bun --cwd=.\bun_define build .\index.ts --target=bun --outfile=build.js --define "console.log=console.error" # expected is console.error("hello!"); but crashing bun
+```
+
+* Bun test with existsSync
+```sh
+bun --cwd=.\bun_fs\bun_fs_exist_sync run .\index.ts # Expected is `false false false true`
+```
+
+* Bun with `npm-run-all` to run parrallel scripts
+```json
+{
+  "name": "bun-learning",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.3",
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "all": "npm-run-all --parallel start dev",
+    "start": "bun run server.ts",
+    "dev": "bun --cwd=foo run bun_test.ts"
+  }
+}
+```
+
+Just run `bun run all` to execute both `start` and `dev`
+
+* Bun test with crypto
+```sh
+bun --cwd=bun_crypto index.ts
+```
+
+* Bunx cowsay
+```sh
+bunx cowsay "Hello, world!"
+```
