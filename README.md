@@ -4,7 +4,7 @@ A Javascript runtime, a JavaScript package manager, same as npm, yarn
 
 ## Description
 
-I will check and upgrade each version of bun.The purpose of this repository is just testing bun behavior, bun working and bun experiance. I don't think I can start to use bun in a real project. The first thing of bun is not actually support Windows OS, I am using WSL for bypass this installation.
+I will check and upgrade each version of bun.The purpose of this repository is just testing bun behavior, bun working and bun experience. ~~I don't think I can start to use bun in a real project. The first thing of bun is not actually support Windows OS, I am using WSL for bypass this installation.~~
 
 ## Getting Started
 
