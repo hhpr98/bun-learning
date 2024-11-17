@@ -6,4 +6,4 @@ import { openSync } from "fs";
 
 const fd = openSync(".\\bun_fs\\bun_fs_write_file\\file.txt", "w");
 // await writeFile(fd, "hello"); // does not truncate (keep the file)
-await writeFile(".\\bun_fs\\bun_fs_write_file\\file.txt", "hello"); // truncates
+await writeFile(".\\bun_fs\\bun_fs_write_file\\file.txt", "hello from bun 1.1.34"); // truncates

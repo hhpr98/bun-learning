@@ -68,16 +68,16 @@ await fetch("https://example.com/slow", { signal: abortSignal });
 
 ```sh
 # Linux x64
-bun build --compile --target=bun-linux-x64 app.ts
+bun build --compile --target=bun-linux-x64 server.ts
 
 # Windows x64
-bun build --compile --target=bun-windows-x64 app.ts
+bun build --compile --target=bun-windows-x64 server.ts
 
 # macOS Silicon
-bun build --compile --target=bun-darwin-arm64 app.ts
+bun build --compile --target=bun-darwin-arm64 server.ts
 
 # Linux arm64
-bun build --compile --target=bun-linux-arm64 app.ts
+bun build --compile --target=bun-linux-arm64 server.ts
 ```
 
 * Bun now allow to comment in package.json (but we do not recommend it)
@@ -160,7 +160,7 @@ const lib = dlopen(import.meta.resolve("./lib.so") /* ... symbols */);
 * Bun build with `--define` param
 ```sh
 bun --cwd=.\bun_define build .\index.ts --target=bun --outfile=build.js # none crash
-bun --cwd=.\bun_define build .\index.ts --target=bun --outfile=build.js --define "console.log=console.error" # expected is console.error("hello!"); but crashing bun
+bun --cwd=.\bun_define build .\index.ts --target=bun --outfile=build.js --define "console.log=console.error"
 ```
 
 * Bun test with existsSync
@@ -196,10 +196,61 @@ Just run `bun run all` to execute both `start` and `dev`
 
 * Bun test with crypto
 ```sh
-bun --cwd=bun_crypto index.ts
+bun --cwd=bun_crypto index.ts # 3338be694f50c5f338814986cdf0686453a888b84f424d792af4b9202398f392
 ```
 
 * Bunx cowsay
 ```sh
 bunx cowsay "Hello, world!"
+```
+
+* Bun UDP socket
+```sh
+bun bun_udp_socket\index.js
+```
+The output is:
+```
+message from 127.0.0.1:54324:
+Hello!
+```
+
+* Bun node:dgram
+```sh
+bun node_dgram\send-10-messages.js
+```
+
+* Bun request override
+```sh
+bun foo\bun_request.js
+```
+
+The output is:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot POST /</pre>  <===== See the method here
+</body>
+</html>
+```
+
+* Bun node:dns
+```sh
+bun node_dns\index.js # hiii
+```
+
+* Bun json import
+```
+bun bun_json_import\index.js
+```
+
+The ouput is:
+```json
+{
+  test: 0,
+}
 ```
