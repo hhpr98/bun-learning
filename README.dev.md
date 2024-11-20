@@ -1,11 +1,11 @@
-### Executing program test bun
+# Executing program test bun
 
-* Bun test seq, yes, basename, dirname
+## Bun test seq, yes, basename, dirname
 ```sh
 bun foo\hello.js
 ```
 
-* Bun start both script without open 2 (or more) terminals and cd into them
+## Bun start both script without open 2 (or more) terminals and cd into them
 ```sh
 # bun run --filter <workspace> <script>
 # OR bun --filter='*' dev
@@ -14,22 +14,22 @@ cd bun_workspaces
 bun run --filter "*" dev # will run both dev script of ws1 and ws2
 ```
 
-* Bun open file with no 2nd parameter (callback)
+## Bun open file with no 2nd parameter (callback)
 ```sh
 bun bun_fs\bun_fs_close\index.ts
 ```
 
-* Bun writeFile example
+## Bun writeFile example
 ```sh
 bun bun_fs\bun_fs_write_file\index.ts
 ```
 
-* Bun fs appendFile example
+## Bun fs appendFile example
 ```sh
 bun bun_fs\bun_fs_append_file\index.ts
 ```
 
-* Bun using database, sqlite file control, db_throw_on_err example
+## Bun using database, sqlite file control, db_throw_on_err example
 ```sh
 bun bun_database\bun_db_using.ts
 bun bun_database\bun_db_file_control.ts
@@ -37,17 +37,17 @@ bun bun_database\bun_db_close_on_throw_error.ts
 bun bun_database\bun_db_join.ts
 ```
 
-* Bun which() with case-insensitive
+## Bun which() with case-insensitive
 ```sh
 bun foo\bun_which.ts
 ```
 
-* Bun cwd flag (change working directory)
+## Bun cwd flag (change working directory)
 ```sh
 bun --cwd=.\foo run bun_test.ts
 ```
 
-* Bun abort signal (for referal only)
+## Bun abort signal (for referal only)
 ```ts
 const first = new AbortController().signal;
 const second = new AbortController().signal;
@@ -64,7 +64,7 @@ const abortSignal = AbortSignal.any([first, second]);
 await fetch("https://example.com/slow", { signal: abortSignal });
 ```
 
-* To cross-compile a TypeScript or JavaScript application to a different platform, use the `--target` option with `bun build --compile`:
+## To cross-compile a TypeScript or JavaScript application to a different platform, use the `--target` option with `bun build --compile`:
 
 ```sh
 # Linux x64
@@ -80,7 +80,7 @@ bun build --compile --target=bun-darwin-arm64 server.ts
 bun build --compile --target=bun-linux-arm64 server.ts
 ```
 
-* Bun now allow to comment in package.json (but we do not recommend it)
+## Bun now allow to comment in package.json (but we do not recommend it)
 ```json
 {
   "name": "bun-learning",
@@ -99,7 +99,7 @@ bun build --compile --target=bun-linux-arm64 server.ts
 }
 ```
 
-* Bun run with `--hot` or `--watch` command to automatically reload bun (if have TC39 stage3 proposal Import Attributes)
+## Bun run with `--hot` or `--watch` command to automatically reload bun (if have TC39 stage3 proposal Import Attributes)
 
 ```ts
 import html from "./index.html" with type { type: "text" };
@@ -112,7 +112,7 @@ import cfg from "./Configfile" with { type: "toml" };
 console.log(cfg); // { "name": "app" }
 ```
 
-* Bun.serve() now supports Server Name Indication (SNI)
+## Bun.serve() now supports Server Name Indication (SNI)
 
 You can now specify multiple `serverName` TLS entries in `Bun.serve`. This is useful when you want to serve multiple TLS certificates or hostnames on the same port.
 
@@ -139,36 +139,36 @@ serve({
 });
 ```
 
-* Bun.Glob (scan file)
+## Bun.Glob (scan file)
 
 ```sh
 bun run bun_glob\index.ts
 ```
 
-* Bun compile (compile to a `bun_test.exe` file)
+## Bun compile (compile to a `bun_test.exe` file)
 ```sh
 bun build --compile .\foo\bun_test.ts --outfile .\foo\build\bun_test
 ```
 
-* Dlopen (open lib) with bun (supported `.so`, `.dylib`, `.dll` file)
+## Dlopen (open lib) with bun (supported `.so`, `.dylib`, `.dll` file)
 ```ts
 import { dlopen } from "bun:ffi";
 
 const lib = dlopen(import.meta.resolve("./lib.so") /* ... symbols */);
 ```
 
-* Bun build with `--define` param
+## Bun build with `--define` param
 ```sh
 bun --cwd=.\bun_define build .\index.ts --target=bun --outfile=build.js # none crash
 bun --cwd=.\bun_define build .\index.ts --target=bun --outfile=build.js --define "console.log=console.error"
 ```
 
-* Bun test with existsSync
+## Bun test with existsSync
 ```sh
 bun --cwd=.\bun_fs\bun_fs_exist_sync run .\index.ts # Expected is `false false false true`
 ```
 
-* Bun with `npm-run-all` to run parrallel scripts
+## Bun with `npm-run-all` to run parrallel scripts
 ```json
 {
   "name": "bun-learning",
@@ -194,17 +194,17 @@ bun --cwd=.\bun_fs\bun_fs_exist_sync run .\index.ts # Expected is `false false f
 
 Just run `bun run all` to execute both `start` and `dev`
 
-* Bun test with crypto
+## Bun test with crypto
 ```sh
 bun --cwd=bun_crypto index.ts # 3338be694f50c5f338814986cdf0686453a888b84f424d792af4b9202398f392
 ```
 
-* Bunx cowsay
+## Bunx cowsay
 ```sh
 bunx cowsay "Hello, world!"
 ```
 
-* Bun UDP socket
+## Bun UDP socket
 ```sh
 bun bun_udp_socket\index.js
 ```
@@ -214,12 +214,12 @@ message from 127.0.0.1:54324:
 Hello!
 ```
 
-* Bun node:dgram
+## Bun node:dgram
 ```sh
 bun node_dgram\send-10-messages.js
 ```
 
-* Bun request override
+## Bun request override
 ```sh
 bun foo\bun_request.js
 ```
@@ -238,12 +238,12 @@ The output is:
 </html>
 ```
 
-* Bun node:dns
+## Bun node:dns
 ```sh
 bun node_dns\index.js # hiii
 ```
 
-* Bun json import
+## Bun json import
 ```
 bun bun_json_import\index.js
 ```
@@ -253,4 +253,51 @@ The ouput is:
 {
   test: 0,
 }
+```
+
+## Bun test
+Run the followings to test all test cases:
+```sh
+bun test
+```
+
+## Bunx version
+```sh
+bunx --version # 1.1.34
+```
+
+## Bun web socket
+
+Start a ws server:
+```sh
+bun web_socket\ws_server.js
+```
+
+Start ws client
+```sh
+bun web_socket\ws_client.js
+```
+
+## Bun throw version at the end
+```sh
+bun bun_error\bun_error_throw_version.js #Bun v1.1.34 (Windows x64)
+```
+
+## Bun shell with empty command
+
+Will throw error without hang
+```sh
+bun bun_shell\bun_shell_empty.js
+```
+
+### Bun build
+
+Build command
+```sh
+bun build --complile .\bun_build\express.js --sourcemap=external --outdir .
+```
+
+Integration test
+```sh
+bun build --complile .\bun_build\express.js --minify 
 ```
